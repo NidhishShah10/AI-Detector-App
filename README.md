@@ -14,6 +14,13 @@ This project aims to address these challenges through a full stack web applicati
 - Implement meaningful text transformation while preserving semantic content
 - Evaluate system performance using real test data
 ---
+## ✍ Contributers
+
+- Nidhish Shah
+- Junfeng Li
+- Stephen Hannawi
+
+---
 
 ## 💡 Proposed Method
 
