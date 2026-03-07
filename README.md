@@ -18,6 +18,7 @@ This project aims to address these challenges through a full stack web applicati
 
 - Nidhish Shah
 - Junfeng Li
+- Cole Smolinski
 - Stephen Hannawi
 
 ---
