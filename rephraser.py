@@ -33,4 +33,4 @@ if __name__ == "__main__":
     print("Original:")
     print(sample)
     print("\nRewritten:")
-    print(rewrite_text(sample))
+    print(rewrite_text(sample)) ##end
