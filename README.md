@@ -50,6 +50,8 @@ This project uses the following data sources:
 
 - Sapling AI API – AI-generated text detection
 - Anthropic Claude API – Natural language rephrasing
+- Hugging Face Model — For local text rephrasing
+- Dataset — "Human vs AI Generated Essays" by Navjot Kaushal from Kaggle.com
 ---
 
  ## 🛠️ Tech Stack
