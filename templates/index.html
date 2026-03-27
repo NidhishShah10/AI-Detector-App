@@ -2,29 +2,143 @@
 <html>
 <head>
     <title>AI Detector App</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1a2e4a;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 750px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            border: 1.5px solid #dce3ed;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 15px;
+            color: #333;
+            resize: vertical;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #4A90E2;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-detect {
+            background-color: #4A90E2;
+            color: white;
+        }
+
+        .btn-detect:hover { background-color: #357ABD; }
+
+        .btn-rephrase {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn-rephrase:hover { background-color: #1e8449; }
+
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 750px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .result-card h3 {
+            color: #1a2e4a;
+            margin-bottom: 10px;
+        }
+
+        .score-high { color: #e74c3c; font-size: 24px; font-weight: bold; }
+        .score-mid  { color: #e67e22; font-size: 24px; font-weight: bold; }
+        .score-low  { color: #27ae60; font-size: 24px; font-weight: bold; }
+
+        .humanized-box {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
-<h1>AI Essay Detector & Humanizer</h1>
+<h1>Hi there! Let's analyze your essay 👋</h1>
 
-<form method="POST">
-<textarea name="essay" rows="10" cols="60" placeholder="Paste your essay here"></textarea>
-<br><br>
-<button type="submit">Analyze & Humanize</button>
-</form>
+<div class="card">
+    <form method="POST">
+        <textarea name="essay" placeholder="Write, paste or drop your essay here...">{{ essay or '' }}</textarea>
+        <div class="buttons">
+            <button class="btn btn-detect" name="action" value="detect">🔍 AI Detector</button>
+            <button class="btn btn-rephrase" name="action" value="rephrase">✍️ Paraphraser</button>
+        </div>
+    </form>
+</div>
 
 {% if result %}
-<h3>Original Essay:</h3>
-
-{% if result.score == result.score %}
-<p>AI Score: {{ result.score }}% — {{ result.label }}</p>
-{% else %}
-<p>Add a text to get the analysis</p>
+<div class="result-card">
+    <h3>🔍 Detection Result</h3>
+    {% if result.score > 70 %}
+        <p class="score-high">{{ result.score }}% AI — {{ result.label }}</p>
+    {% elif result.score > 40 %}
+        <p class="score-mid">{{ result.score }}% AI — {{ result.label }}</p>
+    {% else %}
+        <p class="score-low">{{ result.score }}% AI — {{ result.label }}</p>
+    {% endif %}
+</div>
 {% endif %}
 
-<h3>Rephrased Version:</h3>
-<p>{{ rewritten }}</p>
+{% if rewritten %}
+<div class="result-card">
+    <h3>✅ Paraphrased Version</h3>
+    <div class="humanized-box">{{ rewritten }}</div>
+</div>
 {% endif %}
 
 </body>
-</html> 
+</html>
