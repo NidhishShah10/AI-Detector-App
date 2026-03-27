@@ -1,0 +1,11 @@
+true_label,pred_label,score
+Human Written,Human Written,18.4
+Human Written,Human Written,0.44
+AI Generated,AI Generated,80.25
+AI Generated,Human Written,15.26
+Human Written,Human Written,19.51
+Human Written,Human Written,9.22
+AI Generated,AI Generated,99.36
+AI Generated,AI Generated,99.3
+Human Written,Human Written,0.64
+Human Written,Human Written,19.24
