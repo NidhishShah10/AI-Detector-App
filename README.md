@@ -64,6 +64,7 @@ The system provides two core features:
 
 ---
 
-<img width="1297" height="814" alt="image" src="https://github.com/user-attachments/assets/da1fc1b2-4be6-478f-af36-78e16d62f71f" />
+<img width="1392" height="791" alt="image" src="https://github.com/user-attachments/assets/be22c02a-799b-474e-930e-233fec1d7bb4" />
+
 
 ---
