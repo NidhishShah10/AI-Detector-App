@@ -67,16 +67,21 @@
             padding: 8px 18px;
             background: rgba(255,255,255,0.1);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
             border-radius: 20px;
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
             margin-bottom: 25px;
             transition: 0.2s;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
         }
 
-        .btn-bg-change:hover { background: rgba(255,255,255,0.2); }
+        .btn-bg-change:hover {
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 20px rgba(255,255,255,0.4), 0 0 40px rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
 
         .card {
             background: rgba(255, 255, 255, 0.05);
@@ -143,23 +148,35 @@
         .btn-detect {
             background: linear-gradient(135deg, #4A90E2, #357ABD);
             color: white;
+            box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
         }
 
-        .btn-detect:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-detect:hover {
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.7), 0 0 40px rgba(74, 144, 226, 0.3);
+            transform: translateY(-1px);
+        }
 
         .btn-rephrase {
             background: linear-gradient(135deg, #27ae60, #1e8449);
             color: white;
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
         }
 
-        .btn-rephrase:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-rephrase:hover {
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.7), 0 0 40px rgba(39, 174, 96, 0.3);
+            transform: translateY(-1px);
+        }
 
         .btn-clear {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
         }
 
-        .btn-clear:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-clear:hover {
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.7), 0 0 40px rgba(231, 76, 60, 0.3);
+            transform: translateY(-1px);
+        }
 
         .btn-small-clear {
             padding: 6px 14px;
@@ -170,24 +187,71 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
         }
 
-        .btn-small-clear:hover { opacity: 0.9; }
+        .btn-small-clear:hover {
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.7), 0 0 40px rgba(231, 76, 60, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .copy-btn {
+            padding: 6px 14px;
+            background: linear-gradient(135deg, #4A90E2, #357ABD);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .copy-btn:hover {
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.7), 0 0 40px rgba(74, 144, 226, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .split-rephrase {
+            padding: 6px 14px;
+            font-size: 13px;
+            flex: none;
+            background: linear-gradient(135deg, #27ae60, #1e8449);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .split-rephrase:hover {
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.7), 0 0 40px rgba(39, 174, 96, 0.3);
+            transform: translateY(-1px);
+        }
 
         .btn-back {
             padding: 10px 20px;
             background: rgba(255,255,255,0.1);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
             border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 20px;
             transition: 0.2s;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
         }
 
-        .btn-back:hover { background: rgba(255,255,255,0.2); }
+        .btn-back:hover {
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 20px rgba(255,255,255,0.4), 0 0 40px rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
 
         .result-card {
             background: rgba(255, 255, 255, 0.05);
@@ -219,6 +283,11 @@
 
         .split-screen.visible { display: flex; }
 
+        #splitForm {
+            width: 100%;
+            max-width: 1480px;
+        }
+
         .split-panel {
             flex: 1 1 0;
             min-width: 0;
@@ -229,7 +298,6 @@
             padding: 25px;
             display: flex;
             flex-direction: column;
-            align-items: stretch;
             min-height: 620px;
         }
 
@@ -240,13 +308,9 @@
         }
 
         .original-textarea {
-            flex: 0 0 450px;
+            flex: 1;
             width: 100%;
-            min-width: 100%;
-            max-width: 100%;
             min-height: 450px;
-            height: 450px;
-            overflow-y: auto;
             background: rgba(255,255,255,0.05);
             border-left: 4px solid #8892b0;
             border-top: none;
@@ -268,14 +332,7 @@
         }
 
         .humanized-box {
-            flex: 0 0 450px;
-            width: 100%;
-            min-width: 100%;
-            max-width: 100%;
-            min-height: 450px;
-            height: 450px;
-            overflow-y: auto;
-            overflow-x: hidden;
+            flex: 1;
             background: rgba(39, 174, 96, 0.1);
             border-left: 4px solid #27ae60;
             border-radius: 8px;
@@ -283,9 +340,8 @@
             font-size: 15px;
             color: #ccd6f6;
             line-height: 1.6;
-            white-space: pre-wrap;
-            display: block;
-            align-self: stretch;
+            min-height: 450px;
+            overflow-y: auto;
         }
 
         .panel-footer {
@@ -304,7 +360,7 @@
             padding: 25px 40px;
             margin-top: 20px;
             width: 100%;
-            max-width: 1380px;
+            max-width: 1400px;
             animation: fadeIn 0.6s ease;
         }
 
@@ -338,19 +394,6 @@
             color: #ccd6f6;
             margin-top: 10px;
         }
-
-        .copy-btn {
-            padding: 6px 14px;
-            background: #4A90E2;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .copy-btn:hover { background: #357ABD; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -390,12 +433,6 @@
         @media (max-width: 768px) {
             .split-screen { flex-direction: column; }
             .analysis-card { max-width: 100%; }
-            .split-panel { min-height: auto; }
-            .original-textarea,
-            .humanized-box {
-                min-width: 100%;
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -425,7 +462,7 @@
             </div>
             <div class="buttons">
                 <button class="btn btn-detect" name="action" value="detect" type="submit">🔍 AI Detector</button>
-                <button class="btn btn-rephrase" name="action" value="rephrase" type="submit">✍️ Paraphraser</button>
+                <button class="btn btn-rephrase" name="action" value="rephrase" type="submit">✍️ Humanizer</button>
                 <button class="btn btn-clear" type="button" onclick="clearText()">🗑️ Clear</button>
             </div>
         </form>
@@ -459,14 +496,14 @@
                         <span id="originalCharCount"></span>
                     </div>
                     <div style="display: flex; gap: 8px;">
-                        <button class="btn-rephrase btn" name="action" value="rephrase" type="submit" style="padding: 6px 14px; font-size: 13px; flex: none;">✍️ Rephrase</button>
+                        <button class="split-rephrase" name="action" value="rephrase" type="submit">✍️ Humanize</button>
                         <button class="btn-small-clear" type="button" onclick="clearPanel('originalText', 'originalWordCount', 'originalCharCount')">🗑️ Clear</button>
                     </div>
                 </div>
             </div>
 
             <div class="split-panel">
-                <h3>✅ Paraphrased Version</h3>
+                <h3>✅ Humanized Version</h3>
                 <div class="humanized-box" id="paraphrased">{{ rewritten }}</div>
                 <div class="panel-footer">
                     <div class="counter">
@@ -474,11 +511,8 @@
                         <span id="rewrittenCharCount"></span>
                     </div>
                     <div style="display: flex; gap: 8px;">
-    <button class="copy-btn" type="button"
-        onclick="navigator.clipboard.writeText(document.getElementById('paraphrased').innerText)">
-        📋 Copy
-    </button>
-</div>
+                        <button class="copy-btn" type="button" onclick="navigator.clipboard.writeText(document.getElementById('paraphrased').innerText)">📋 Copy</button>
+                    </div>
                 </div>
             </div>
 
@@ -502,13 +536,14 @@
         </div>
     </div>
     {% endif %}
+
 </div>
 
 <script>
     const themes = [
-        { label: "🌌 Blue Nebula",  bg: "#0a0f1e" },
-        { label: "🔥 Lava Embers",  bg: "#1a0800" },
-        { label: "💻 Matrix Rain",  bg: "#000d00"  }
+        { label: "🌌 Blue Nebula", bg: "#0a0f1e" },
+        { label: "🔥 Lava Embers", bg: "#1a0800" },
+        { label: "💻 Matrix Rain",  bg: "#000d00" }
     ];
 
     let currentTheme = parseInt(localStorage.getItem('theme') || '0');
@@ -556,24 +591,24 @@
         const ctx = canvas.getContext('2d');
 
         function resize() {
-            canvas.width  = window.innerWidth;
+            canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
         resize();
         window.addEventListener('resize', resize);
 
         const blobs = Array.from({ length: 7 }, () => ({
-            x:  Math.random() * window.innerWidth,
-            y:  Math.random() * window.innerHeight,
-            r:  120 + Math.random() * 160,
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            r: 120 + Math.random() * 160,
             dx: (Math.random() - 0.5) * 0.6,
             dy: (Math.random() - 0.5) * 0.6,
             hue: 10 + Math.random() * 30
         }));
 
         const sparks = Array.from({ length: 60 }, () => ({
-            x:    Math.random() * window.innerWidth,
-            y:    Math.random() * window.innerHeight,
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
             size: 1 + Math.random() * 2.5,
             speed: 0.3 + Math.random() * 0.7,
             alpha: Math.random()
@@ -584,25 +619,22 @@
 
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
             blobs.forEach(b => {
-                b.x += b.dx + (mx - canvas.width  / 2) * 0.0003;
+                b.x += b.dx + (mx - canvas.width / 2) * 0.0003;
                 b.y += b.dy + (my - canvas.height / 2) * 0.0003;
-                if (b.x < -b.r) b.x = canvas.width  + b.r;
-                if (b.x > canvas.width  + b.r) b.x = -b.r;
+                if (b.x < -b.r) b.x = canvas.width + b.r;
+                if (b.x > canvas.width + b.r) b.x = -b.r;
                 if (b.y < -b.r) b.y = canvas.height + b.r;
                 if (b.y > canvas.height + b.r) b.y = -b.r;
-
                 const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
-                g.addColorStop(0,   `hsla(${b.hue}, 100%, 55%, 0.45)`);
+                g.addColorStop(0, `hsla(${b.hue}, 100%, 55%, 0.45)`);
                 g.addColorStop(0.5, `hsla(${b.hue - 5}, 90%, 35%, 0.18)`);
-                g.addColorStop(1,   `hsla(${b.hue}, 80%, 15%, 0)`);
+                g.addColorStop(1, `hsla(${b.hue}, 80%, 15%, 0)`);
                 ctx.beginPath();
                 ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
                 ctx.fillStyle = g;
                 ctx.fill();
             });
-
             sparks.forEach(s => {
                 s.y -= s.speed;
                 s.alpha -= 0.003;
@@ -616,7 +648,6 @@
                 ctx.fillStyle = `rgba(255, ${100 + Math.random() * 80}, 20, ${s.alpha})`;
                 ctx.fill();
             });
-
             lavaRAF = requestAnimationFrame(draw);
         }
         draw();
@@ -630,38 +661,29 @@
         let cols, drops;
 
         function resize() {
-            canvas.width  = window.innerWidth;
+            canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            cols  = Math.floor(canvas.width / fontSize);
+            cols = Math.floor(canvas.width / fontSize);
             drops = new Array(cols).fill(1);
         }
         resize();
         window.addEventListener('resize', resize);
 
         const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
         let mx = -999;
         canvas.addEventListener('mousemove', e => { mx = e.clientX; });
-
         let lastTime = 0;
 
         function draw(time) {
-            if (time - lastTime < 40) {
-                matrixRAF = requestAnimationFrame(draw);
-                return;
-            }
+            if (time - lastTime < 40) { matrixRAF = requestAnimationFrame(draw); return; }
             lastTime = time;
-
             ctx.fillStyle = 'rgba(0, 10, 0, 0.08)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             for (let i = 0; i < cols; i++) {
                 const colX = i * fontSize;
-
                 ctx.font = fontSize + 'px monospace';
                 ctx.fillStyle = '#ccffcc';
                 ctx.fillText(chars[Math.floor(Math.random() * chars.length)], colX, drops[i] * fontSize);
-
                 ctx.fillStyle = `hsl(120, 100%, ${30 + Math.random() * 20}%)`;
                 for (let j = 1; j < 5; j++) {
                     const y = (drops[i] - j) * fontSize;
@@ -671,19 +693,14 @@
                     }
                 }
                 ctx.globalAlpha = 1;
-
                 const distFromMouse = Math.abs(colX - mx);
-
                 if (distFromMouse > 60 && drops[i] * fontSize > canvas.height && Math.random() > 0.988) {
                     drops[i] = 0;
                 }
-
                 drops[i] += 0.85;
             }
-
             matrixRAF = requestAnimationFrame(draw);
         }
-
         draw();
     }
 
@@ -705,12 +722,12 @@
 
     applyTheme(currentTheme);
 
-    const textarea  = document.getElementById('essayBox');
+    const textarea = document.getElementById('essayBox');
     const wordCount = document.getElementById('wordCount');
     const charCount = document.getElementById('charCount');
 
     function updateCounter() {
-        const text  = textarea ? textarea.value.trim() : '';
+        const text = textarea ? textarea.value.trim() : '';
         const words = text === '' ? 0 : text.split(/\s+/).length;
         const chars = textarea ? textarea.value.length : 0;
         if (wordCount) wordCount.textContent = words + ' words';
@@ -718,20 +735,13 @@
     }
 
     function clearText() {
-        if (textarea) {
-            textarea.value = '';
-            updateCounter();
-        }
+        if (textarea) { textarea.value = ''; updateCounter(); }
     }
 
     function clearPanel(panelId, wordId, charId) {
         const panel = document.getElementById(panelId);
-        if (panel) {
-            if (panel.tagName === 'TEXTAREA') {
-                panel.value = '';
-            } else {
-                panel.textContent = '';
-            }
+        if (panel && panel.tagName === 'TEXTAREA') {
+            panel.value = '';
             document.getElementById(wordId).textContent = '0 words';
             document.getElementById(charId).textContent = '0 characters';
         }
@@ -740,7 +750,7 @@
     function updatePanelCounter(panelId, wordId, charId) {
         const panel = document.getElementById(panelId);
         if (!panel) return;
-        const text  = panel.tagName === 'TEXTAREA' ? panel.value.trim() : panel.innerText.trim();
+        const text = panel.tagName === 'TEXTAREA' ? panel.value.trim() : panel.innerText.trim();
         const words = text === '' ? 0 : text.split(/\s+/).length;
         const chars = panel.tagName === 'TEXTAREA' ? panel.value.length : panel.innerText.length;
         const wordEl = document.getElementById(wordId);
@@ -756,10 +766,8 @@
     if (hasRewritten) {
         const mainCard = document.getElementById('mainCard');
         if (mainCard) mainCard.classList.add('hidden');
-
         updatePanelCounter('originalText', 'originalWordCount', 'originalCharCount');
         updatePanelCounter('paraphrased', 'rewrittenWordCount', 'rewrittenCharCount');
-
         const originalTextarea = document.getElementById('originalText');
         if (originalTextarea) {
             originalTextarea.addEventListener('input', function() {
@@ -768,21 +776,10 @@
         }
     }
 
-    const mainForm  = document.getElementById('mainForm');
+    const mainForm = document.getElementById('mainForm');
     const splitForm = document.getElementById('splitForm');
-
-    if (mainForm) {
-        mainForm.addEventListener('submit', () => {
-            document.getElementById('spinner').style.display = 'flex';
-        });
-    }
-
-    if (splitForm) {
-        splitForm.addEventListener('submit', () => {
-            document.getElementById('spinner').style.display = 'flex';
-        });
-    }
-
+    if (mainForm) mainForm.addEventListener('submit', () => { document.getElementById('spinner').style.display = 'flex'; });
+    if (splitForm) splitForm.addEventListener('submit', () => { document.getElementById('spinner').style.display = 'flex'; });
     if (textarea) textarea.addEventListener('input', updateCounter);
     updateCounter();
 </script>
