@@ -31,7 +31,7 @@ The system provides two core features:
 - The text is analyzed using the Sapling AI Detection API
 - The system returns a score (0–100%) indicating the likelihood that the text is AI-generated
 
-### 2. Humanization (Paraphraser)
+### 2. Humanization (Humanizer)
 - The essay is sent to the Groq LLaMA 3.3 70B model
 - The essay is rewritten to sound more natural and human-like while preserving the original meaning
 - A rewriting analysis shows how much the wording changed compared to the original
