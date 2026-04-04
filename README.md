@@ -1,4 +1,4 @@
-# AI Detector & Humanizer App
+# 🤖 AI Detector & Humanizer App
 
 ## 📌 Problem Statement
 With the rapid advancement of AI writing tools, it has become increasingly difficult to distinguish between human-written and AI-generated content in academic writing. This web app brings together AI detection and natural language processing to detect AI-written essays and rephrase them to sound more human-like. It takes in any essay or piece of text and intelligently rewrites the content while maintaining the original meaning in a more natural and human-like writing style.
