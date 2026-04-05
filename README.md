@@ -37,11 +37,41 @@ The system provides two core features:
 - A rewriting analysis shows how much the wording changed compared to the original
 
 ---
+## ⚙️ Setup & Installation
 
+### 1. Clone the repo
+```bash
+git clone https://github.com/NidhishShah10/ai-detector-app.git
+cd ai-detector-app
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Create `.env` file and add API`S
+SAPLING_API_KEY=your_sapling_key 
+
+GROQ_API_KEY=your_groq_key
+
+### 4. Run the app
+```bash
+python app.py
+```
+
+### 5. Open the local host link below in your browser
+http://127.0.0.1:5000
+
+
+---
 ## 📊 Data Sources
 - **Sapling AI API** — AI-generated text detection
 - **Groq LLaMA 3.3 70B** — Natural language rephrasing
 - **Dataset** — "Human vs AI Generated Essays" by Navjot Kaushal from Kaggle.com
+- **Particles.js** — Blue Nebula background by Vincent Garreau
+- **Matrix Rain** — Canvas implementation
+- **Lava Embers** — Canvas implementation
 
 ---
 
@@ -60,11 +90,14 @@ The system provides two core features:
 ### Evaluation
 - Scikit-learn — cosine similarity for rewriting analysis
 - Pandas — dataset loading and processing
-- Custom evaluation script — 99% detection accuracy on 10 sample essays
+- Custom evaluation script — 90% detection accuracy on 10 sample essays
 
 ---
 
 <img width="1392" height="791" alt="image" src="https://github.com/user-attachments/assets/be22c02a-799b-474e-930e-233fec1d7bb4" />
 
 
+---
+## 📝 License
+This project was built for academic purposes at Oakland University — Winter 2026.
 ---
