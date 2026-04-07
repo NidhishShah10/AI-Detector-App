@@ -14,6 +14,18 @@ def detect_ai(text):
         "text": text
     }
 
+    # ADDED BY JUNFENG: basic request error handling
+    try:
+        response = requests.post(url, json=payload, timeout=30)
+        result = response.json()
+    except Exception as e:
+        return {
+            "score": None,
+            "label": "Request failed",
+            "status": f"error: {str(e)}"
+        }
+    # END ADDED BY JUNFENG
+
     response = requests.post(url, json=payload)
     result = response.json()
 
